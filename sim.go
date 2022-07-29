@@ -13,7 +13,7 @@ import (
 )
 
 var log bool = true
-var debug bool = true
+var debug bool = false
 var times int32 = 2148 // 2148
 var step int32 = 1000000 // 1000000
 var fout *os.File
@@ -146,11 +146,11 @@ var (
 
 func print(args ...interface{}){
 	//fmt.Println(args...)
-	//if debug {
+	if debug {
 		fmt.Println(args...)
-	//}else{
-	//	fmt.Fprintln(fout,args...)
-	//}
+	}else{
+		fmt.Fprintln(fout,args...)
+	}
 }
 
 // 统计
