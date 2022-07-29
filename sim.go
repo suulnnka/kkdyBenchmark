@@ -13,7 +13,7 @@ import (
 )
 
 var log bool = true
-var debug bool = false
+var debug bool = true
 var times int32 = 2148 // 2148
 var step int32 = 1000000 // 1000000
 var fout *os.File
@@ -146,11 +146,11 @@ var (
 
 func print(args ...interface{}){
 	//fmt.Println(args...)
-	if debug {
+	//if debug {
 		fmt.Println(args...)
-	}else{
-		fmt.Fprintln(fout,args...)
-	}
+	//}else{
+	//	fmt.Fprintln(fout,args...)
+	//}
 }
 
 // 统计
@@ -1546,7 +1546,8 @@ func run_part_5_1_燃烧_不变(rand Random, hp [31]int){
 	for i := 5 ; i < len(阶段_5_1_燃烧_不变) ; i ++ {
 		for j := 0 ; j < len(阶段_5_1_燃烧_不变[i]) ; j ++ {
 			if i == 32 {
-				rand.NextDouble()
+				// 只吃一个暴击的情况
+				// rand.NextDouble()
 			}
 			enemy := 阶段_5_1_燃烧_不变[i][j]
 			if hp[enemy] > 0 {
