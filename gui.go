@@ -1156,7 +1156,7 @@ func sim() {
 
 	var diff int = int(endTime - startTime)
 
-	label_str.Set("done, " + strconv.Itoa( diff ) + " secend.")
+	label_str.Set("done, " + strconv.Itoa( diff ) + " second.")
 
 	running = false
 }
