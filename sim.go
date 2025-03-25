@@ -52,7 +52,7 @@ func (random *Random) init( Seed int32 ){
 		}
 	}
 	random.inext = 0
-	random.inextp = 31
+	random.inextp = 21
 	random.mp = 0
 	random.seed = Seed
 }
@@ -69,6 +69,7 @@ func (random *Random) NextDouble() float64{
 	}
 	var retVal int32 = random.SeedArray[random.inext] - random.SeedArray[random.inextp]
 
+	if (retVal == MBIG) {retVal--}    
 	if (retVal < 0){
 	  retVal = retVal + MBIG
 	}
